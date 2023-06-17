@@ -1,0 +1,84 @@
+<!-- <main>
+  <section>
+    <div class="bot-container">
+      <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+        <div class="header-container">
+          <img src="../assets/Logo.jpg" alt="Logo">
+          <h2 style="color: #0a004d">Legal<span style="color:#5A5A5A">Gen</span></h2>
+        </div><hr class="line">
+
+        <div class="button-group">
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn-navigate">Login</button>
+            <button type="submit" class="btn-navigate">Sign Up</button>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn">Research Book</button>
+            <button type="submit" class="btnQuery">Search Query</button>
+          </div>
+        </div>
+
+        <footer>
+          <div class="input-container">
+            <input type="text" name="message" placeholder="Type your message" ngModel>
+            <div class="send-button" >
+              <img src="../assets/send.svg" />
+            </div>
+          </div>
+        </footer>
+      </form>
+    </div>
+  </section>
+</main> -->
+
+
+<main>
+  <section>
+    <div class="bot-container">
+      <form #myForm="ngForm">
+        <div class="header-container">
+          <img src="../assets/Logo.jpg" alt="Logo">
+          <h2 style="color: #0a004d">Legal<span style="color:#5A5A5A">Gen</span></h2>
+        </div>
+        <hr class="line">
+
+        <div class="button-group">
+          <div class="d-flex justify-content-center">
+          
+            <button type="submit" class="btn-navigate">Sign Up</button>
+            <button type="submit" class="btnQuery">Search Query</button>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <div class="d-flex justify-content-center1">
+            <button type="submit" class="btn-navigate">Login</button>
+            <button type="submit" class="btn">Research Book</button>
+            
+          </div>
+        </div>
+
+        <div class="conversation-container">
+          <div class="message" *ngFor="let message of messages">
+            <span [ngClass]="{'user-message': message.author === 'user', 'bot-message': message.author === 'bot'}">
+              {{ message.content }}
+            </span>
+          </div>
+        </div>
+
+        <footer>
+          <div class="input-container">
+            <input type="text" name="message" placeholder="Type your message" ngModel>
+            <button class="send-button" (click)="onSubmit(myForm)">
+              <img src="../assets/send.svg" />
+            </button>
+          </div>
+        </footer>
+      </form>
+    </div>
+  </section>
+</main>
+
